@@ -3,7 +3,7 @@ import setuptools
 
 setuptools.setup(
     name='peopleai-api',
-    version='0.0.1',
+    version='0.0.2',
 
     author='Max Zheng',
     author_email='maxzheng.os@gmail.com',
