@@ -14,3 +14,13 @@ Python library to download `activities from People.ai's REST API
                                             output_format='JSONLines', export_type='delta')
     client.check_activities_export(job_id, until_completed=True)
     client.download_activities_export(job_id, '/tmp/peopleai-export.json')
+
+Links & Contact Info
+====================
+
+| PyPI Package: https://pypi.org/project/peopleai-api/
+| GitHub Source: https://github.com/maxzheng/peopleai-api
+| Report Issues/Bugs: https://github.com/maxzheng/peopleai-api/issues
+|
+| Connect: https://www.linkedin.com/in/maxzheng
+| Contact: maxzheng.os @t gmail.com
