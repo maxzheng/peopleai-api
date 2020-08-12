@@ -4,7 +4,11 @@ import time
 import requests
 
 
-class DidNotCompleteError(Exception):
+class ExportError(Exception):
+    """ An error occurred during export """
+
+
+class DidNotCompleteError(ExportError):
     """ Raised if a job did not complete successfully """
 
 
@@ -108,6 +112,10 @@ class PeopleAIClient:
         :return: Job Id
         """
         r = self.post(self.EXPORT_ACTIVITIES_PATH, params=params)
+
+        if 'error' in r:
+            raise ExportError(r['error'] + ': ' + r['message'])
+
         return r['job_id']
 
     def check_activities_export(self, job_id, until_completed=False, delay=60):
