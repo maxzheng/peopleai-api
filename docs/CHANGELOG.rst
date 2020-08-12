@@ -1,5 +1,11 @@
-Version 0.0.2
+Version 0.0.3
 ================================================================================
+
+* Add and raise ExportError when job failed to start
+* Add Github actions
+
+Version 0.0.2
+--------------------------------------------------------------------------------
 
 * Add links and contact info
 
