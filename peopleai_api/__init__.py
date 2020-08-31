@@ -128,6 +128,7 @@ class PeopleAIClient:
         :param int delay: Number of seconds to wait before checking again if until_completed is True
         :raises DidNotCompleteError: If the job status becomes Canceled or Failed
         """
+        # Wait before checking to ensure job is ready to be checked
         time.sleep(delay)
 
         while True:
