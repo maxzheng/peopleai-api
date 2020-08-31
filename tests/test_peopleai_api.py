@@ -31,7 +31,7 @@ def test_peopleai_api():
     job_id = client.start_activities_export(start_date='2020-08-06', end_date='2020-08-06', activity_type='all',
                                             output_format='JSONLines', export_type='delta')
 
-    state = client.check_activities_export(job_id, until_completed=True)
+    state = client.check_activities_export(job_id, until_completed=True, delay=0.1)
     assert state == 'Completed'
 
     with in_temp_dir():

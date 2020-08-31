@@ -128,8 +128,14 @@ class PeopleAIClient:
         :param int delay: Number of seconds to wait before checking again if until_completed is True
         :raises DidNotCompleteError: If the job status becomes Canceled or Failed
         """
+        time.sleep(delay)
+
         while True:
             status = self.get(self.EXPORT_ACTIVITIES_PATH + '/' + str(job_id))
+
+            if 'state' not in status:
+                print('status', status)
+                raise DidNotCompleteError('Job state is unknown -- see output for details')
 
             if not until_completed or status['state'] == 'Completed':
                 break
